@@ -7,7 +7,7 @@ class ThemeColorManager {
     constructor() {
         this.themes = {};
         this.currentColorTheme = 'klein';
-        this.currentMode = 'light'; // light or dark
+        this.currentMode = 'dark'; // light or dark
         this.init();
     }
 
@@ -18,7 +18,7 @@ class ThemeColorManager {
             
             // 从localStorage获取保存的主题设置
             this.currentColorTheme = localStorage.getItem('colorTheme') || 'klein';
-            this.currentMode = localStorage.getItem('themeMode') || this.getPreferredMode();
+            this.currentMode = localStorage.getItem('themeMode') || 'dark';
             
             // 应用主题
             this.applyTheme(this.currentColorTheme, this.currentMode);

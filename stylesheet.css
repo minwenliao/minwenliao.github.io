@@ -256,6 +256,53 @@ name {
   overflow: hidden;
 }
 
+/* 项目视频容器样式 - 用于研究项目展示 */
+.project-video-container {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.project-video-container:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease-in-out;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.project-video-overlay video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.project-video-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
 .fade {
   transition: opacity 0.3s ease-in-out;
 }
@@ -1499,6 +1546,16 @@ tr[onmouseout]:hover papertitle:before {
 }
 .github-icon:hover i {
   color: #374151;
+}
+
+.zhihu-icon:hover {
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+}
+.zhihu-icon:hover i {
+  color: #0066ff;
+}
+.zhihu-icon:hover span {
+  color: #0066ff;
 }
 
 .x-custom-icon {
