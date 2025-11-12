@@ -1,1 +1,2 @@
-*.mov filter=lfs diff=lfs merge=lfs -text
+# 只对大文件使用 LFS
+images/lm/robotdemo.mov filter=lfs diff=lfs merge=lfs -text
