@@ -1,2 +1,4 @@
-# 只对大文件使用 LFS
+# 只对原始大文件使用 LFS
 images/lm/robotdemo.mov filter=lfs diff=lfs merge=lfs -text
+# 压缩文件不使用 LFS
+images/lm/robotdemo_compressed.mov -filter -diff -merge
