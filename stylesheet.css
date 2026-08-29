@@ -303,6 +303,14 @@ name {
   z-index: 0;
 }
 
+/* 论文卡片循环演示视频 */
+.paper-demo-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .fade {
   transition: opacity 0.3s ease-in-out;
 }
@@ -1687,6 +1695,71 @@ tr[onmouseout]:hover papertitle:before {
   .main-container {
     padding: 0 15px;
   }
+
+  .profile-table,
+  .profile-table > tbody,
+  .profile-row,
+  .profile-row > td,
+  .research-list,
+  .research-list > tbody,
+  .research-card,
+  .research-card > td {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .profile-copy {
+    padding: 18px 14px 8px !important;
+  }
+
+  .profile-photo {
+    width: min(62vw, 240px) !important;
+    max-width: 240px !important;
+    margin: 0 auto;
+    padding: 8px 20px 20px !important;
+    text-align: center;
+  }
+
+  .profile-photo img {
+    width: 100% !important;
+  }
+
+  .research-list {
+    border-spacing: 0 !important;
+  }
+
+  .research-card {
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .research-card > td:first-child {
+    padding: 12px 12px 4px !important;
+  }
+
+  .research-card > td:last-child {
+    padding: 10px 14px 16px !important;
+  }
+
+  .research-card papertitle {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .research-card .paper-links {
+    justify-content: flex-start;
+    margin: 8px 0;
+  }
+
+  .research-card .paper-icon span {
+    opacity: 1;
+    transform: none;
+    font-size: 10px;
+  }
   
   name {
     font-size: 28px;
@@ -1756,6 +1829,27 @@ tr[onmouseout]:hover papertitle:before {
   .main-container {
     padding: 0 10px;
   }
+
+  .profile-copy {
+    padding: 16px 8px 6px !important;
+  }
+
+  .profile-photo {
+    width: min(68vw, 210px) !important;
+    padding: 6px 16px 16px !important;
+  }
+
+  .research-card {
+    margin-bottom: 14px;
+  }
+
+  .research-card > td:first-child {
+    padding: 10px 8px 4px !important;
+  }
+
+  .research-card > td:last-child {
+    padding: 8px 10px 14px !important;
+  }
   
   .icon-container {
     gap: 15px;
@@ -1816,5 +1910,18 @@ tr[onmouseout]:hover papertitle:before {
   .paper-icon span {
     font-size: 8px;
   }
-}
 
+  .research-card .paper-links {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .research-card .paper-icon {
+    height: 30px;
+    padding: 0 8px;
+  }
+
+  .research-card .paper-icon span {
+    font-size: 10px;
+  }
+}

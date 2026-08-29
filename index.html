@@ -7,6 +7,7 @@
 
     <meta name="author" content="Minwen Liao">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <!-- 图标字体库 -->
@@ -42,20 +43,20 @@
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
+          <table class="profile-table" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr class="profile-row" style="padding:0px">
+              <td class="profile-copy" style="padding:2.5%;width:63%;vertical-align:middle">
               <p style="text-align:center">
                 <name>Minwen Liao</name>
               </p>
                 <p>
-                  I am a third-year undergraduate student at Xinjiang University, currently seeking a <strong>PhD position for Fall 2027</strong> and research assistant opportunities.
+                  I am currently a research intern at the <strong>University of Washington</strong> and a third-year undergraduate student at Xinjiang University. I am seeking <strong>PhD opportunities for Fall 2027</strong>.
+                </p>
+                <p>
+                  My research goal is to build robots that <strong>understand and remember the physical world</strong>, autonomously complete <strong>complex, long-horizon tasks</strong>, and acquire generalizable intelligence by learning from diverse data at scale.
                 </p>
                 <p>
                   I previously worked on <strong>robotic manipulation</strong> at <em>Tsinghua AIR</em>.
-                </p>
-                <p>
-                  In addition, I participated in the <strong>RoboCon</strong> competition, which marked the starting point of my passion for computer vision and embodied intelligence. <strong>Computer vision and embodied intelligence is all my love.</strong>
                 </p>
                 <p style="text-align:center;margin-top:16px;padding:12px;background:var(--bg-secondary);border-radius:8px;border-left:4px solid var(--blue-accent);">
                   💬 <strong>I am open to discussions and actively seeking collaborators!</strong> Feel free to reach out if you're interested in working together on exciting projects.
@@ -74,13 +75,9 @@
                   <i class="fab fa-weixin"></i>
                   <span>WeChat</span>
                 </a>
-                <a href="https://www.zhihu.com/people/adgai-nai-hao-xiang-a" class="contact-icon zhihu-icon" target="_blank">
-                  <i class="fab fa-zhihu"></i>
-                  <span>Zhihu</span>
-                </a>
                 </div>
               </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
+              <td class="profile-photo" style="padding:2.5%;width:37%;max-width:37%">
                 <a href="#"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/lm/lm.jpeg" class="hoverZoomLink" loading="lazy"></a>
               </td>
             </tr>
@@ -112,10 +109,98 @@
               </td>
             </tr>
           </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px 8px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table class="research-list" style="width:100%;border:0px;border-spacing:0px 8px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+      <!-- Flex-π -->
+      <tr class="research-card" bgcolor="#ffffd0">
+        <td style="padding:12px;width:45%;vertical-align:top">
+          <div class="project-video-container">
+            <video class="paper-demo-video" muted autoplay loop playsinline poster="images/pro/flexpi.jpg">
+              <source src="images/pro/flexpi-demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </td>
+        <td style="padding:12px;width:55%;vertical-align:top">
+          <papertitle>Flex-π: A Multi-Stream World-Action Model with Compute Flexibility</papertitle>
+          <br>
+            Ge Yan*,
+            Jinghao Liu*,
+            Yuzhi Fan*,
+            Lei Cai,
+            <strong>Minwen Liao</strong>,
+            Jesse Zhang<sup>†</sup>,
+            Dieter Fox<sup>†</sup>
+          <br>
+            <strong><em>Preprint, 2026</em></strong>
+          <br>
+            <p style="margin:2px 0;font-size:0.9em;"><i>* Equal contribution &nbsp;&nbsp; <sup>†</sup> Equal advising</i></p>
+          <br>
+            <div class="paper-links">
+              <a href="https://flex-pi.github.io/" class="paper-icon project-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-home"></i>
+                <span>Project</span>
+              </a>
+              <a href="https://arxiv.org/abs/2608.10860" class="paper-icon arxiv-icon" target="_blank" rel="noopener noreferrer">
+                <i class="ai ai-arxiv"></i>
+                <span>Paper</span>
+              </a>
+              <a href="https://github.com/geyan21/flex-pi" class="paper-icon code-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                <span>Code</span>
+              </a>
+            </div>
+          <p style="margin:2px 0;line-height:1.4;">
+            We introduce Flex-π, a multi-stream world-action model that jointly predicts RGB, 3D geometry, object semantics, and actions while supporting flexible inference modes from a single checkpoint.
+          </p>
+        </td>
+      </tr>
+
+      <!-- Dexora -->
+      <tr class="research-card" bgcolor="#ffffd0">
+        <td style="padding:12px;width:45%;vertical-align:top">
+          <div class="project-video-container">
+            <video class="paper-demo-video" muted autoplay loop playsinline poster="images/pro/dexora.png">
+              <source src="images/pro/dexora-demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </td>
+        <td style="padding:12px;width:55%;vertical-align:top">
+          <papertitle>Dexora: Open-source VLA for High-DoF Bimanual Dexterity</papertitle>
+          <br>
+            Zongzheng Zhang,
+            Jingrui Pang,
+            Zhuo Yang,
+            Kun Li,
+            <strong>Minwen Liao</strong>,
+            et al.
+          <br>
+            <strong><em>ICRA, 2026</em></strong>
+            <span class="newnew">Best Paper Finalist</span>
+          <br><br>
+            <div class="paper-links">
+              <a href="https://dexoravla.github.io/" class="paper-icon project-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-home"></i>
+                <span>Project</span>
+              </a>
+              <a href="https://arxiv.org/abs/2605.18722" class="paper-icon arxiv-icon" target="_blank" rel="noopener noreferrer">
+                <i class="ai ai-arxiv"></i>
+                <span>Paper</span>
+              </a>
+              <a href="https://github.com/dexoravla/Dexora" class="paper-icon code-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                <span>Code</span>
+              </a>
+            </div>
+          <p style="margin:2px 0;line-height:1.4;">
+            We introduce Dexora, an open-source vision-language-action system for dual-arm, dual-hand, high-DoF dexterous manipulation.
+          </p>
+        </td>
+      </tr>
 
       <!-- GM-MoE -->
-      <tr bgcolor="#ffffd0">
+      <tr class="research-card" bgcolor="#ffffd0">
         <td style="padding:12px;width:45%;vertical-align:top">
           <div class="project-video-container">
             <video muted autoplay loop playsinline style="width:100%;border-radius:4px;display:block;">
@@ -160,7 +245,7 @@
       </tr>
 
       <!-- RoboChemist -->
-      <tr bgcolor="#ffffd0">
+      <tr class="research-card" bgcolor="#ffffd0">
         <td style="padding:12px;width:55%;vertical-align:top">
           <div class="project-video-container">
             <video muted autoplay loop playsinline style="width:100%;border-radius:4px;display:block;">
@@ -254,48 +339,20 @@
     </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
+            <tr>
               <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Short Bio</h2>
+                <h2>Beyond Research</h2>
               </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 8px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-        <td style=padding:00px;width:100%;vertical-align:middle;padding-left:20px>
-          <p>I am a researcher focusing on <strong>computer vision</strong> and <strong>embodied intelligence</strong>, with particular interests in low-light image enhancement and robotic manipulation. I have listed my detailed research interests below.</p>
-          <br>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
-            <td style="padding:0px;width:100%;vertical-align:middle">
-              <heading>Research Interests</heading>
-            </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding-top:10px;">
-              <p>My primary research focuses are at the intersection of <strong>Computer Vision</strong> and <strong>Embodied Intelligence</strong>, aiming for generalizable and robust robotic systems:</p>
-              
-              <p style="margin-left: 20px;">
-                <span style="font-weight: 600; color: var(--blue-accent);">1. Intuitive Physics:</span> My work focuses on endowing robotic systems with <strong>intuitive physics knowledge</strong>, aiming to establish a <strong>priori understanding</strong> of object properties and dynamics. This is crucial for enhancing the <strong>robustness and long-horizon planning</strong> of robots, particularly in tasks involving <strong>deformable object manipulation</strong> and <strong>complex, contact-rich operations</strong>.
-              </p>
-              
-              <p style="margin-left: 20px;">
-                <span style="font-weight: 600; color: var(--blue-accent);">2. VLA-RL Integration:</span> My goal is to design a <strong>VLA-RL integrated framework</strong> that enables a <strong>spatial-aware, dexterous manipulation model</strong> capable of <strong>long-horizon operations</strong>, primarily by distilling operational knowledge from <strong>large-scale human demonstration data</strong>.
-              </p>
-              
-              <p style="margin-left: 20px;">
-                <span style="font-weight: 600; color: var(--blue-accent);">3. World Modeling & Closed-Loop Autonomy:</span> Driving Continuous Self-Improvement. My long-term research goal is to develop <strong>predictive world models</strong> that enable robots to perform efficient <strong>environment-grounded planning and reasoning</strong>. By constructing a <strong>closed-loop learning paradigm</strong>, I facilitate the iterative optimization of robots, transitioning smoothly from <strong>human-derived priors</strong> to <strong>self-generated robotic experience</strong>.
-              </p>
+              <td style="padding:0;width:100%;vertical-align:middle;padding-left:20px">
+                <p>My journey into robotics began with the <strong>RoboCon</strong> competition, where I developed my passion for computer vision and embodied intelligence.</p>
+                <p>Beyond research, I enjoy playing the <strong>violin 🎻</strong>, running <strong>marathons 🏃</strong>, and capturing moments through <strong>photography 📷</strong>. These hobbies inspire my creativity and keep me balanced.</p>
               </td>
             </tr>
           </tbody></table>
-          <br>
-          <p>Beyond research, I enjoy playing the <strong>violin 🎻</strong>, running <strong>marathons 🏃</strong>, and capturing moments through <strong>photography 📷</strong>. These hobbies inspire my creativity and keep me balanced.</p>
-          </td>
-      </tr>
-    </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
