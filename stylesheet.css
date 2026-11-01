@@ -1543,7 +1543,7 @@ tr[onmouseout]:hover papertitle:before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 8px;
   margin: 24px 0;
 }
 
@@ -1560,7 +1560,7 @@ tr[onmouseout]:hover papertitle:before {
   position: relative;
   background: transparent;
   border: none;
-  padding: 0 12px;
+  padding: 0 8px;
   gap: 8px;
 }
 
@@ -1594,7 +1594,8 @@ tr[onmouseout]:hover papertitle:before {
   transform: scale(1.1);
 }
 
-.contact-icon:hover span {
+.contact-icon:hover span,
+.contact-icon:focus-visible span {
   opacity: 1;
   transform: translateX(0);
 }
@@ -1943,8 +1944,9 @@ tr[onmouseout]:hover papertitle:before {
   }
   
   .contact-icon {
-    height: 32px;
-    padding: 0 8px;
+    min-width: 40px;
+    height: 40px;
+    padding: 0;
     gap: 4px;
   }
   
