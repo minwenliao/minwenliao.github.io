@@ -10,6 +10,10 @@
     <meta name="robots" content="noindex">
     <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌟</text></svg>" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     <!-- 图标字体库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
@@ -26,8 +30,9 @@
             letter-spacing: 0.02em;
         }
       </style>
-    <script src="scripts/functions.js"></script>
-    <script src="scripts/theme-manager.js"></script>
+    <script src="scripts/functions.js" defer></script>
+    <script src="scripts/theme-manager.js" defer></script>
+    <script src="scripts/media.js" defer></script>
   </head>
 
   <body>
@@ -69,7 +74,7 @@
                 </div>
               </td>
               <td class="profile-photo" style="padding:2.5%;width:37%;max-width:37%">
-                <a href="#"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/lm/lm.jpeg" class="hoverZoomLink" loading="lazy"></a>
+                <a href="#"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="Minwen Liao" src="images/lm/profile.jpg" width="800" height="1200" class="hoverZoomLink" loading="eager" fetchpriority="high" decoding="async"></a>
               </td>
             </tr>
           </tbody></table>
@@ -125,7 +130,7 @@
       <tr class="research-card" bgcolor="#ffffd0">
         <td style="padding:12px;width:45%;vertical-align:top">
           <div class="project-video-container">
-            <video class="paper-demo-video" muted autoplay loop playsinline poster="images/pro/flexpi.jpg">
+            <video class="paper-demo-video" muted loop playsinline controls preload="none" data-autoplay poster="images/pro/flexpi.jpg">
               <source src="images/pro/flexpi-demo.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -214,7 +219,7 @@
       <tr class="research-card" bgcolor="#ffffd0">
         <td style="padding:12px;width:45%;vertical-align:top">
           <div class="project-video-container">
-            <video muted autoplay loop playsinline style="width:100%;border-radius:4px;display:block;">
+            <video muted loop playsinline controls preload="none" data-autoplay poster="images/pro/gmhomepage-poster.jpg" style="width:100%;border-radius:4px;display:block;">
               <source src="images/pro/gmhomepage.mov" type="video/quicktime">
               <source src="images/pro/gmhomepage.mov" type="video/mp4">
               Your browser does not support the video tag.
@@ -259,7 +264,7 @@
       <tr class="research-card" bgcolor="#ffffd0">
         <td style="padding:12px;width:55%;vertical-align:top">
           <div class="project-video-container">
-            <video muted autoplay loop playsinline style="width:100%;border-radius:4px;display:block;">
+            <video muted loop playsinline controls preload="none" data-autoplay poster="images/lm/robotdemo-poster.jpg" style="width:100%;border-radius:4px;display:block;">
               <source src="images/lm/robotdemo_compressed.mov" type="video/quicktime">
               <source src="images/lm/robotdemo_compressed.mov" type="video/mp4">
               Your browser does not support the video tag.

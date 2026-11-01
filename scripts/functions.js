@@ -99,8 +99,9 @@ function initializeLegacyTheme() {
     }
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeLegacyTheme);
-} else {
+if (document.readyState === 'complete') {
     initializeLegacyTheme();
+} else {
+    // Wait for the other deferred scripts before deciding whether a fallback is needed.
+    document.addEventListener('DOMContentLoaded', initializeLegacyTheme, { once: true });
 }

@@ -592,20 +592,16 @@ class ThemeColorManager {
 // 全局初始化
 let themeColorManager;
 
-document.addEventListener('DOMContentLoaded', () => {
-    themeColorManager = new ThemeColorManager();
-    window.themeColorManager = themeColorManager;
-});
+function initializeThemeColorManager() {
+    if (!window.themeColorManager) {
+        themeColorManager = new ThemeColorManager();
+        window.themeColorManager = themeColorManager;
+    }
+}
 
 // 兼容性处理
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        if (!window.themeColorManager) {
-            themeColorManager = new ThemeColorManager();
-            window.themeColorManager = themeColorManager;
-        }
-    });
+    document.addEventListener('DOMContentLoaded', initializeThemeColorManager, { once: true });
 } else {
-    themeColorManager = new ThemeColorManager();
-    window.themeColorManager = themeColorManager;
+    initializeThemeColorManager();
 }

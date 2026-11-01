@@ -1,5 +1,4 @@
-/* 现代字体系统 - 使用系统字体栈 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* The web font loads asynchronously; the system font is available immediately. */
 
 /* 性能优化 - 关键渲染路径优化 */
 * {
@@ -931,10 +930,6 @@ sub_heading {
 
 body {
   isolation: isolate;
-}
-
-.main-container > table:first-child {
-  animation: slideInLeft 0.8s ease-out 0.2s both;
 }
 
 .news, .misc-container {
