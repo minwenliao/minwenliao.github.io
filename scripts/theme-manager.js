@@ -7,7 +7,7 @@ class ThemeColorManager {
     constructor() {
         this.themes = {};
         this.currentColorTheme = 'klein';
-        this.currentMode = 'light'; // light or dark
+        this.currentMode = 'light';
         this.init();
     }
 
@@ -18,16 +18,13 @@ class ThemeColorManager {
             
             // 从localStorage获取保存的主题设置
             this.currentColorTheme = localStorage.getItem('colorTheme') || 'klein';
-            this.currentMode = localStorage.getItem('themeMode') || 'light';
+            this.currentMode = 'light';
             
             // 应用主题
             this.applyTheme(this.currentColorTheme, this.currentMode);
             
             // 初始化主题选择器
             this.initThemeSelector();
-            
-            // 绑定原有的日夜切换按钮
-            this.bindModeToggle();
             
             console.log('主题管理器初始化完成');
         } catch (error) {
@@ -73,13 +70,12 @@ class ThemeColorManager {
     }
 
     getPreferredMode() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
-        }
         return 'light';
     }
 
     applyTheme(colorTheme, mode) {
+        // The homepage uses light mode, including for returning visitors.
+        mode = 'light';
         const theme = this.themes[colorTheme];
         if (!theme) {
             console.warn(`主题 "${colorTheme}" 不存在，使用默认主题`);

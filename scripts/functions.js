@@ -27,7 +27,7 @@ function hideblock(blockId)
 // 主题切换功能
 class ThemeManager {
     constructor() {
-        this.currentTheme = this.getStoredTheme() || this.getPreferredTheme();
+        this.currentTheme = 'light';
         this.init();
     }
 
@@ -35,27 +35,9 @@ class ThemeManager {
         // 设置初始主题
         this.applyTheme(this.currentTheme);
         
-        // 绑定切换按钮事件
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => this.toggleTheme());
-        }
-        
-        // 监听系统主题变化
-        if (window.matchMedia) {
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            mediaQuery.addListener((e) => {
-                if (!this.getStoredTheme()) {
-                    this.applyTheme(e.matches ? 'dark' : 'light');
-                }
-            });
-        }
     }
 
     getPreferredTheme() {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
-        }
         return 'light';
     }
 
@@ -68,6 +50,7 @@ class ThemeManager {
     }
 
     applyTheme(theme) {
+        theme = 'light';
         this.currentTheme = theme;
         document.documentElement.setAttribute('data-theme', theme);
         this.storeTheme(theme);
