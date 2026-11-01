@@ -7,7 +7,7 @@ class ThemeColorManager {
     constructor() {
         this.themes = {};
         this.currentColorTheme = 'klein';
-        this.currentMode = 'dark'; // light or dark
+        this.currentMode = 'light'; // light or dark
         this.init();
     }
 
@@ -18,7 +18,7 @@ class ThemeColorManager {
             
             // 从localStorage获取保存的主题设置
             this.currentColorTheme = localStorage.getItem('colorTheme') || 'klein';
-            this.currentMode = localStorage.getItem('themeMode') || 'dark';
+            this.currentMode = localStorage.getItem('themeMode') || 'light';
             
             // 应用主题
             this.applyTheme(this.currentColorTheme, this.currentMode);
@@ -95,6 +95,10 @@ class ThemeColorManager {
         // 设置data属性
         document.documentElement.setAttribute('data-theme', mode);
         document.documentElement.setAttribute('data-color-theme', colorTheme);
+        const modeToggle = document.getElementById('theme-toggle');
+        if (modeToggle) {
+            modeToggle.setAttribute('aria-label', mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        }
         
         // 保存到localStorage
         localStorage.setItem('colorTheme', colorTheme);

@@ -109,18 +109,15 @@ class ThemeManager {
     }
 }
 
-// 页面加载完成后初始化主题管理器
-document.addEventListener('DOMContentLoaded', () => {
-    window.themeManager = new ThemeManager();
-});
+// The color theme manager owns the toggle when it is available.
+function initializeLegacyTheme() {
+    if (typeof ThemeColorManager === 'undefined' && !window.themeManager) {
+        window.themeManager = new ThemeManager();
+    }
+}
 
-// 兼容旧版本浏览器
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        if (!window.themeManager) {
-            window.themeManager = new ThemeManager();
-        }
-    });
+    document.addEventListener('DOMContentLoaded', initializeLegacyTheme);
 } else {
-    window.themeManager = new ThemeManager();
+    initializeLegacyTheme();
 }

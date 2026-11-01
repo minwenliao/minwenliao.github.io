@@ -930,7 +930,7 @@ sub_heading {
 }
 
 body {
-  animation: fadeInUp 0.8s ease-out;
+  isolation: isolate;
 }
 
 .main-container > table:first-child {
@@ -1380,10 +1380,10 @@ tr[onmouseout]:nth-child(5) { animation-delay: 0.5s; }
 
 /* 夜间模式切换时的页面闪烁防止 */
 html {
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
-[data-theme="dark"] html {
+html[data-theme="dark"] {
   color-scheme: dark;
 }
 
@@ -1466,6 +1466,75 @@ tr[onmouseout]:hover papertitle:before {
 }
 
 /* 主容器响应式设计 */
+/* Keep the photograph separate so the text remains fully opaque. */
+.campus-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.90)), url('images/uw.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+}
+
+[data-theme="dark"] .campus-background {
+  background-image: linear-gradient(rgba(15, 20, 25, 0.90), rgba(15, 20, 25, 0.94)), url('images/uw.jpg');
+}
+
+.research-interests {
+  padding: 8px 16px 16px;
+}
+
+.research-interests-intro {
+  margin: 0 0 24px;
+  color: var(--text-secondary);
+}
+
+.research-interest-blocks {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 17px;
+}
+
+.research-interest-block {
+  min-width: 0;
+  padding: 22px 20px 24px;
+  border: 1px solid #dce6e8;
+  border-top: 3px solid #0891b2;
+  border-radius: 1px;
+  background: rgba(247, 252, 252, 0.88);
+}
+
+.research-interest-block h3 {
+  margin: 0 0 16px;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+}
+
+.research-interest-block p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+.research-collaboration {
+  margin: 24px 0 0;
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .research-interest-block {
+  background: rgba(20, 33, 39, 0.94);
+  border-color: #374151;
+  border-top-color: #22d3ee;
+}
+
 .main-container {
   width: 100%;
   max-width: 100vw;
